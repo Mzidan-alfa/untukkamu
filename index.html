@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Flower Surprise</title>
+
+    <link rel="stylesheet" href="bunga.css">
+
+</head>
+
+<audio id="bgMusic" loop>
+
+    <source src="lagu.mp3"
+    type="audio/mp3">
+
+</audio>
+
+<body>
+
+<!-- INTRO -->
+
+<div class="intro" id="intro">
+
+    <button class="love-btn" id="loveBtn">
+        ❤
+    </button>
+
+    <p class="click-text">
+        Hallo sayangku... aku ada hadiah nih buat kamu.. 
+        pencet tombol love nya deh
+    </p>
+
+</div>
+
+<!-- SCENE -->
+
+<div class="scene" id="scene">
+
+    <!-- STARS -->
+
+    <div class="stars"></div>
+
+    <!-- TITLE -->
+
+    <h1 class="title">
+        Happy Birthdayy sayang
+    </h1>
+
+    <!-- TEXT -->
+
+    <div class="typing-box">
+
+        <span class="typing"
+        id="typingText"></span>
+
+        <span class="cursor"></span>
+
+    </div>
+
+    <!-- FLOWER -->
+
+    <div class="flower">
+
+        <!-- TULIP -->
+
+        <div class="tulip">
+
+            <div class="petal back-left"></div>
+            <div class="petal back-right"></div>
+
+            <div class="petal left"></div>
+            <div class="petal right"></div>
+
+            <div class="petal center"></div>
+
+        </div>
+
+        <!-- STEM -->
+
+        <div class="stem"></div>
+
+        <!-- LEAVES -->
+
+        <div class="leaf leaf-left"></div>
+        <div class="leaf leaf-right"></div>
+
+        <!-- GROUND -->
+
+        <div class="ground"></div>
+
+        <!-- FIREFLIES -->
+
+        <div class="firefly ff1"></div>
+        <div class="firefly ff2"></div>
+        <div class="firefly ff3"></div>
+        <div class="firefly ff4"></div>
+
+    </div>
+
+    <!-- FALLING PHOTOS -->
+
+    <div class="photos">
+
+        <img src="foto1.jpeg" class="photo p1">
+        <img src="foto2.jpeg" class="photo p2">
+        <img src="foto3.jpeg" class="photo p3">
+        <img src="foto4.jpeg" class="photo p4">
+
+    </div>
+
+    <!-- GRASS -->
+
+    <div class="grass">
+
+        <div class="blade g1"></div>
+        <div class="blade g2"></div>
+        <div class="blade g3"></div>
+
+        <div class="blade g4"></div>
+        <div class="blade g5"></div>
+        <div class="blade g6"></div>
+
+    </div>
+
+</div>
+
+<script>
+
+/* ========================= */
+/* STARS */
+/* ========================= */
+
+const stars =
+document.querySelector('.stars');
+
+for(let i = 0; i < 250; i++){
+
+    const star =
+    document.createElement('div');
+
+    star.classList.add('star');
+
+    star.style.left =
+    Math.random() * 100 + "%";
+
+    star.style.top =
+    Math.random() * 100 + "%";
+
+    stars.appendChild(star);
+}
+
+/* ========================= */
+/* LOVE BUTTON */
+/* ========================= */
+
+const loveBtn =
+document.getElementById("loveBtn");
+
+const intro =
+document.getElementById("intro");
+
+const scene =
+document.getElementById("scene");
+
+const music =
+document.getElementById("bgMusic");
+
+music.volume = 0.3;
+
+loveBtn.onclick = async () => {
+
+    music.currentTime = 45;
+
+    await music.play();
+
+    intro.style.opacity = "0";
+
+    setTimeout(()=>{
+
+        intro.style.display = "none";
+
+        scene.classList.add("show");
+
+    },800);
+
+    typingEffect();
+}
+
+/* ========================= */
+/* TYPING EFFECT */
+/* ========================= */
+
+const text = `
+Ciee udah 21 tahun. selamat ulang tahun ya sayang.
+semoga apa yang kamu pengen jadi kenyataan semuaaaa.
+ini ada bunga buat kamu sepesial warna biruuuu hahahaha... 
+I Love You Sayangg..🌸
+`;
+
+let i = 0;
+
+function typingEffect(){
+
+    if(i < text.length){
+
+        document.getElementById("typingText")
+        .innerHTML += text.charAt(i);
+
+        i++;
+
+        setTimeout(
+            typingEffect,
+            Math.random() * 120 + 60
+        );
+    }
+}
+
+setTimeout(typingEffect,1500);
+
+</script>
+
+</body>
+</html>
