@@ -1,23 +1,19 @@
+
 /* ========================= */
 /* RESET */
 /* ========================= */
 
 *{
-
     margin:0;
     padding:0;
     box-sizing:border-box;
 }
 
 body{
-
     width:100%;
     height:100vh;
-
     overflow:hidden;
-
     background:#020816;
-
     font-family:Arial;
 }
 
@@ -26,71 +22,50 @@ body{
 /* ========================= */
 
 .intro{
-
     position:absolute;
-
     width:100%;
     height:100%;
-
     display:flex;
     flex-direction:column;
     justify-content:center;
     align-items:center;
-
     background:#020816;
-
     z-index:100;
-
     transition:1s;
 }
 
 /* LOVE BUTTON */
 
 .love-btn{
-
     width:140px;
     height:140px;
-
     border:none;
-
     border-radius:50%;
-
     background:#ff2e63;
-
     color:white;
-
     font-size:65px;
-
     cursor:pointer;
 
     box-shadow:
     0 0 20px #ff2e63,
     0 0 60px #ff2e63;
 
-    animation:
-    pulse 1.5s infinite;
+    animation:pulse 1.5s infinite;
 }
 
 .click-text{
-
     color:white;
-
     margin-top:30px;
-
     font-size:24px;
-
     opacity:.8;
 }
 
 @keyframes pulse{
-
     0%,100%{
-
         transform:scale(1);
     }
 
     50%{
-
         transform:scale(1.1);
     }
 }
@@ -100,19 +75,14 @@ body{
 /* ========================= */
 
 .scene{
-
     width:100%;
     height:100%;
-
     position:relative;
-
     opacity:0;
-
     transition:2s;
 }
 
 .scene.show{
-
     opacity:1;
 }
 
@@ -121,17 +91,11 @@ body{
 /* ========================= */
 
 .title{
-
     position:absolute;
-
     top:70px;
-
     width:100%;
-
     text-align:center;
-
     color:white;
-
     font-size:60px;
 
     text-shadow:
@@ -145,23 +109,14 @@ body{
 /* ========================= */
 
 .typing-box{
-
     position:absolute;
-
     top:170px;
     left:50%;
-
-    transform:
-    translateX(-50%);
-
+    transform:translateX(-50%);
     width:850px;
-
     text-align:center;
-
     color:white;
-
     font-size:28px;
-
     line-height:1.6;
 
     text-shadow:
@@ -169,57 +124,43 @@ body{
 }
 
 .typing{
-
     display:inline;
-
     color:white;
 }
 
 /* CURSOR */
 
 .cursor{
-
     display:inline-block;
-
     width:3px;
     height:32px;
-
     background:cyan;
-
     margin-left:4px;
-
     vertical-align:bottom;
 
     box-shadow:
     0 0 10px cyan,
     0 0 20px cyan;
 
-    animation:
-    blinkCursor .8s infinite;
+    animation:blinkCursor .8s infinite;
 }
 
 @keyframes blinkCursor{
-
     0%,50%{
-
         opacity:1;
     }
 
     51%,100%{
-
         opacity:0;
     }
 }
 
 @keyframes cursor{
-
     0%,50%{
-
         border-color:cyan;
     }
 
     51%,100%{
-
         border-color:transparent;
     }
 }
@@ -229,36 +170,26 @@ body{
 /* ========================= */
 
 .stars{
-
     position:absolute;
-
     width:100%;
     height:100%;
 }
 
 .star{
-
     position:absolute;
-
     width:2px;
     height:2px;
-
     background:#8fffff;
-
     border-radius:50%;
-
     animation:blink 3s infinite;
 }
 
 @keyframes blink{
-
     0%,100%{
-
         opacity:.2;
     }
 
     50%{
-
         opacity:1;
     }
 }
@@ -268,63 +199,54 @@ body{
 /* ========================= */
 
 .flower{
-
     position:absolute;
-
     left:50%;
     bottom:70px;
-
-    transform:
-    translateX(-50%);
-
+    transform:translateX(-50%);
     width:300px;
     height:500px;
 
-    animation:
-    flowerMove 4s ease-in-out infinite;
-
+    animation:flowerMove 4s ease-in-out infinite;
     transform-origin:bottom center;
 }
 
 @keyframes flowerMove{
-
     0%,100%{
-
         transform:
         translateX(-50%)
         rotate(-2deg);
     }
 
     50%{
-
         transform:
         translateX(-50%)
         rotate(2deg);
     }
 }
 
+/* ========================= */
 /* STEM */
+/* ========================= */
 
 .stem{
-
     position:absolute;
-
     width:8px;
     height:300px;
-
     left:146px;
     bottom:70px;
-
     border-radius:20px;
 
     background:
-    linear-gradient(to bottom,
-    #a8ffff,
-    #00d9ff);
+    linear-gradient(
+        to bottom,
+        #e9b3ff,
+        #a855f7
+    );
 
     box-shadow:
-    0 0 10px cyan,
-    0 0 30px cyan;
+    0 0 10px #c77dff,
+    0 0 30px #a855f7,
+    0 0 50px #9333ea;
 }
 
 /* ========================= */
@@ -332,51 +254,43 @@ body{
 /* ========================= */
 
 .tulip{
-
     position:absolute;
-
     top:20px;
     left:60px;
-
     width:180px;
     height:180px;
 }
 
 .petal{
-
     position:absolute;
 
     background:#e6ccff;
 
     box-shadow:
     0 0 25px #c77dff,
-    0 0 50px #9d4edd;
+    0 0 50px #a855f7,
+    0 0 80px #9333ea;
 }
 
 /* CENTER */
 
 .center{
-
     width:82px;
     height:120px;
-
     left:49px;
 
     border-radius:
     50% 50%
     35% 35%;
 
-    animation:
-    bloomCenter 4s ease-in-out infinite;
+    animation:bloomCenter 4s ease-in-out infinite;
 }
 
 /* LEFT */
 
 .left{
-
     width:78px;
     height:105px;
-
     left:14px;
     top:34px;
 
@@ -384,17 +298,14 @@ body{
     50% 50%
     20% 50%;
 
-    animation:
-    bloomLeft 4s ease-in-out infinite;
+    animation:bloomLeft 4s ease-in-out infinite;
 }
 
 /* RIGHT */
 
 .right{
-
     width:78px;
     height:105px;
-
     right:14px;
     top:34px;
 
@@ -402,31 +313,24 @@ body{
     50% 50%
     50% 20%;
 
-    animation:
-    bloomRight 4s ease-in-out infinite;
+    animation:bloomRight 4s ease-in-out infinite;
 }
 
 /* BACK */
 
 .back-left{
-
     width:60px;
     height:85px;
-
     left:38px;
     top:12px;
-
     opacity:.65;
 }
 
 .back-right{
-
     width:60px;
     height:85px;
-
     right:38px;
     top:12px;
-
     opacity:.65;
 }
 
@@ -435,16 +339,13 @@ body{
 /* ========================= */
 
 @keyframes bloomLeft{
-
     0%,100%{
-
         transform:
         rotate(-15deg)
         translateX(0px);
     }
 
     50%{
-
         transform:
         rotate(-35deg)
         translateX(-10px);
@@ -452,16 +353,13 @@ body{
 }
 
 @keyframes bloomRight{
-
     0%,100%{
-
         transform:
         rotate(15deg)
         translateX(0px);
     }
 
     50%{
-
         transform:
         rotate(35deg)
         translateX(10px);
@@ -469,14 +367,11 @@ body{
 }
 
 @keyframes bloomCenter{
-
     0%,100%{
-
         transform:scaleY(1);
     }
 
     50%{
-
         transform:scaleY(1.08);
     }
 }
@@ -486,64 +381,56 @@ body{
 /* ========================= */
 
 .leaf{
-
     position:absolute;
-
     width:110px;
     height:50px;
 
     background:
-    linear-gradient(to right,
-    #00fff2,
-    #00bfff);
+    linear-gradient(
+        to right,
+        #d8a4ff,
+        #9333ea
+    );
 
     box-shadow:
-    0 0 20px cyan;
+    0 0 20px #a855f7,
+    0 0 40px #9333ea;
 }
 
 /* LEFT */
 
 .leaf-left{
-
     left:20px;
     bottom:180px;
 
     border-radius:
     100px 0 100px 0;
 
-    animation:
-    leafLeft 4s ease-in-out infinite;
-
+    animation:leafLeft 4s ease-in-out infinite;
     transform-origin:right center;
 }
 
 /* RIGHT */
 
 .leaf-right{
-
     right:20px;
     bottom:240px;
 
     border-radius:
     0 100px 0 100px;
 
-    animation:
-    leafRight 4s ease-in-out infinite;
-
+    animation:leafRight 4s ease-in-out infinite;
     transform-origin:left center;
 }
 
 @keyframes leafLeft{
-
     0%,100%{
-
         transform:
         rotate(40deg)
         translateY(0px);
     }
 
     50%{
-
         transform:
         rotate(-30deg)
         translateY(-10px);
@@ -551,16 +438,13 @@ body{
 }
 
 @keyframes leafRight{
-
     0%,100%{
-
         transform:
         rotate(-40deg)
         translateY(0px);
     }
 
     50%{
-
         transform:
         rotate(30deg)
         translateY(-10px);
@@ -572,21 +456,19 @@ body{
 /* ========================= */
 
 .ground{
-
     position:absolute;
-
     width:220px;
     height:40px;
-
     left:40px;
     bottom:55px;
-
     border-radius:50%;
 
     background:
-    radial-gradient(circle,
-    rgba(0,255,255,.4),
-    transparent 70%);
+    radial-gradient(
+        circle,
+        rgba(168,85,247,.4),
+        transparent 70%
+    );
 
     filter:blur(15px);
 }
@@ -596,22 +478,17 @@ body{
 /* ========================= */
 
 .firefly{
-
     position:absolute;
-
     width:5px;
     height:5px;
-
     background:yellow;
-
     border-radius:50%;
 
     box-shadow:
     0 0 10px yellow,
     0 0 20px yellow;
 
-    animation:
-    fly 4s ease-in-out infinite;
+    animation:fly 4s ease-in-out infinite;
 }
 
 .ff1{
@@ -638,25 +515,17 @@ body{
 }
 
 @keyframes fly{
-
     0%{
-
-        transform:
-        translateY(0px);
-
+        transform:translateY(0px);
         opacity:.3;
     }
 
     50%{
-
         opacity:1;
     }
 
     100%{
-
-        transform:
-        translateY(-25px);
-
+        transform:translateY(-25px);
         opacity:.2;
     }
 }
@@ -666,37 +535,30 @@ body{
 /* ========================= */
 
 .grass{
-
     position:absolute;
-
     width:100%;
     height:150px;
-
     bottom:0;
 }
 
 .blade{
-
     position:absolute;
-
     bottom:-40px;
-
     width:6px;
-
     border-radius:20px;
 
     background:
-    linear-gradient(to top,
-    rgba(0,255,100,.1),
-    rgba(0,255,100,1));
+    linear-gradient(
+        to top,
+        rgba(0,255,100,.1),
+        rgba(0,255,100,1)
+    );
 
     box-shadow:
     0 0 10px #00ff99;
 
     transform-origin:bottom;
-
-    animation:
-    sway 3s ease-in-out infinite;
+    animation:sway 3s ease-in-out infinite;
 }
 
 .g1{
@@ -736,14 +598,11 @@ body{
 }
 
 @keyframes sway{
-
     0%,100%{
-
         margin-left:0;
     }
 
     50%{
-
         margin-left:6px;
     }
 }
@@ -753,86 +612,60 @@ body{
 /* ========================= */
 
 .photos{
-
     position:absolute;
-
     width:100%;
     height:100%;
-
     overflow:hidden;
-
     pointer-events:none;
 }
 
 /* PHOTO */
 
 .photo{
-
     position:absolute;
-
     width:120px;
     height:120px;
-
     object-fit:cover;
-
     border-radius:20px;
-
     border:3px solid white;
 
     box-shadow:
     0 0 15px rgba(255,255,255,.5);
 
     opacity:.9;
-
-    animation:
-    fall linear infinite;
-
-    transform:
-    scale(1.1);
+    animation:fall linear infinite;
+    transform:scale(1.1);
 }
 
 /* PHOTO POSITIONS */
 
 .p1{
-
     left:10%;
-
     animation-duration:12s;
 }
 
 .p2{
-
     left:35%;
-
     animation-duration:15s;
-
     animation-delay:2s;
 }
 
 .p3{
-
     left:65%;
-
     animation-duration:13s;
-
     animation-delay:4s;
 }
 
 .p4{
-
     left:85%;
-
     animation-duration:16s;
-
     animation-delay:1s;
 }
 
 /* FALL */
 
 @keyframes fall{
-
     0%{
-
         transform:
         translateY(-150px)
         rotate(0deg)
@@ -842,12 +675,10 @@ body{
     }
 
     10%{
-
         opacity:1;
     }
 
     100%{
-
         transform:
         translateY(120vh)
         rotate(360deg)
