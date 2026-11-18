@@ -346,11 +346,11 @@ body{
 
     position:absolute;
 
-    background:#dfffff;
+    background:#e6ccff;
 
     box-shadow:
-    0 0 25px cyan,
-    0 0 50px cyan;
+    0 0 25px #c77dff,
+    0 0 50px #9d4edd;
 }
 
 /* CENTER */
