@@ -1,228 +1,272 @@
+
 <!DOCTYPE html>
 <html lang="id">
-<head>
 
+<head>
     <meta charset="UTF-8">
 
     <meta name="viewport"
-    content="width=device-width, initial-scale=1.0">
+          content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+    <meta name="theme-color" content="#020816">
 
     <title>Flower Surprise</title>
 
     <link rel="stylesheet" href="bunga.css">
-
 </head>
-
-<audio id="bgMusic" loop>
-
-    <source src="lagu.mp3"
-    type="audio/mp3">
-
-</audio>
 
 <body>
 
-<!-- INTRO -->
+    <!-- MUSIK -->
 
-<div class="intro" id="intro">
+    <audio id="bgMusic" loop preload="auto">
+        <source src="lagu.mp3" type="audio/mpeg">
+    </audio>
 
-    <button class="love-btn" id="loveBtn">
-        ❤
-    </button>
 
-    <p class="click-text">
-        Hallo cintakuuuuu... ini beb hadiahmu.. 
-        pencet tombol love nyaaaa...
-    </p>
+    <!-- INTRO -->
 
-</div>
+    <div class="intro" id="intro">
 
-<!-- SCENE -->
+        <button class="love-btn" id="loveBtn">
+            ❤
+        </button>
 
-<div class="scene" id="scene">
-
-    <!-- STARS -->
-
-    <div class="stars"></div>
-
-    <!-- TITLE -->
-
-    <h1 class="title">
-        Happy Birthdayy sayang
-    </h1>
-
-    <!-- TEXT -->
-
-    <div class="typing-box">
-
-        <span class="typing"
-        id="typingText"></span>
-
-        <span class="cursor"></span>
+        <p class="click-text">
+            Hallo cintakuuuuu... ini beb hadiahmu..
+            pencet tombol love nyaaaa...
+        </p>
 
     </div>
 
-    <!-- FLOWER -->
 
-    <div class="flower">
+    <!-- SCENE -->
 
-        <!-- TULIP -->
+    <div class="scene" id="scene">
 
-        <div class="tulip">
+        <!-- STARS -->
 
-            <div class="petal back-left"></div>
-            <div class="petal back-right"></div>
+        <div class="stars" id="stars"></div>
 
-            <div class="petal left"></div>
-            <div class="petal right"></div>
 
-            <div class="petal center"></div>
+        <!-- TITLE -->
+
+        <h1 class="title">
+            Happy Birthdayy sayang
+        </h1>
+
+
+        <!-- TYPING TEXT -->
+
+        <div class="typing-box">
+
+            <span class="typing" id="typingText"></span>
+
+            <span class="cursor"></span>
 
         </div>
 
-        <!-- STEM -->
 
-        <div class="stem"></div>
+        <!-- FLOWER -->
 
-        <!-- LEAVES -->
+        <div class="flower">
 
-        <div class="leaf leaf-left"></div>
-        <div class="leaf leaf-right"></div>
+            <!-- TULIP -->
 
-        <!-- GROUND -->
+            <div class="tulip">
 
-        <div class="ground"></div>
+                <div class="petal back-left"></div>
+                <div class="petal back-right"></div>
 
-        <!-- FIREFLIES -->
+                <div class="petal left"></div>
+                <div class="petal right"></div>
 
-        <div class="firefly ff1"></div>
-        <div class="firefly ff2"></div>
-        <div class="firefly ff3"></div>
-        <div class="firefly ff4"></div>
+                <div class="petal center"></div>
+
+            </div>
+
+
+            <!-- STEM -->
+
+            <div class="stem"></div>
+
+
+            <!-- LEAVES -->
+
+            <div class="leaf leaf-left"></div>
+            <div class="leaf leaf-right"></div>
+
+
+            <!-- GROUND -->
+
+            <div class="ground"></div>
+
+
+            <!-- FIREFLIES -->
+
+            <div class="firefly ff1"></div>
+            <div class="firefly ff2"></div>
+            <div class="firefly ff3"></div>
+            <div class="firefly ff4"></div>
+
+        </div>
+
+
+        <!-- FALLING PHOTOS -->
+
+        <div class="photos">
+
+            <img src="foto1.jpeg" class="photo p1" alt="Foto kenangan 1">
+
+            <img src="foto2.jpeg" class="photo p2" alt="Foto kenangan 2">
+
+            <img src="foto3.jpeg" class="photo p3" alt="Foto kenangan 3">
+
+            <img src="foto4.jpeg" class="photo p4" alt="Foto kenangan 4">
+
+        </div>
+
+
+        <!-- GRASS -->
+
+        <div class="grass">
+
+            <div class="blade g1"></div>
+            <div class="blade g2"></div>
+            <div class="blade g3"></div>
+
+            <div class="blade g4"></div>
+            <div class="blade g5"></div>
+            <div class="blade g6"></div>
+
+        </div>
 
     </div>
 
-    <!-- FALLING PHOTOS -->
 
-    <div class="photos">
+    <!-- JAVASCRIPT -->
 
-        <img src="foto1.jpeg" class="photo p1">
-        <img src="foto2.jpeg" class="photo p2">
-        <img src="foto3.jpeg" class="photo p3">
-        <img src="foto4.jpeg" class="photo p4">
+    <script>
 
-    </div>
+        /* ========================= */
+        /* STARS */
+        /* ========================= */
 
-    <!-- GRASS -->
+        const stars = document.getElementById("stars");
 
-    <div class="grass">
+        for (let i = 0; i < 150; i++) {
 
-        <div class="blade g1"></div>
-        <div class="blade g2"></div>
-        <div class="blade g3"></div>
+            const star = document.createElement("div");
 
-        <div class="blade g4"></div>
-        <div class="blade g5"></div>
-        <div class="blade g6"></div>
+            star.classList.add("star");
 
-    </div>
+            star.style.left = Math.random() * 100 + "%";
 
-</div>
+            star.style.top = Math.random() * 100 + "%";
 
-<script>
+            star.style.animationDelay = Math.random() * 3 + "s";
 
-/* ========================= */
-/* STARS */
-/* ========================= */
+            stars.appendChild(star);
 
-const stars =
-document.querySelector('.stars');
+        }
 
-for(let i = 0; i < 250; i++){
 
-    const star =
-    document.createElement('div');
+        /* ========================= */
+        /* LOVE BUTTON */
+        /* ========================= */
 
-    star.classList.add('star');
+        const loveBtn = document.getElementById("loveBtn");
 
-    star.style.left =
-    Math.random() * 100 + "%";
+        const intro = document.getElementById("intro");
 
-    star.style.top =
-    Math.random() * 100 + "%";
+        const scene = document.getElementById("scene");
 
-    stars.appendChild(star);
-}
+        const music = document.getElementById("bgMusic");
 
-/* ========================= */
-/* LOVE BUTTON */
-/* ========================= */
 
-const loveBtn =
-document.getElementById("loveBtn");
+        music.volume = 0.3;
 
-const intro =
-document.getElementById("intro");
 
-const scene =
-document.getElementById("scene");
+        /* ========================= */
+        /* TYPING EFFECT */
+        /* ========================= */
 
-const music =
-document.getElementById("bgMusic");
-
-music.volume = 0.3;
-
-loveBtn.onclick = async () => {
-
-    music.currentTime = 45;
-
-    await music.play();
-
-    intro.style.opacity = "0";
-
-    setTimeout(()=>{
-
-        intro.style.display = "none";
-
-        scene.classList.add("show");
-
-    },800);
-
-    typingEffect();
-}
-
-/* ========================= */
-/* TYPING EFFECT */
-/* ========================= */
-
-const text = `
-Alah alah udah 22 tahun babyku ini. selamat ulang tahun ya bebb.
-semoga cintaku ini makin sayang sama aku lagi, makin ditingkatin lagi inisiatifnya dan selalu sayang aku selamanya ya bebb.
-ini ada bunga kesukaanmu nichh... 
+        const text = `
+Alah alah udah 22 tahun babyku ini. Selamat ulang tahun ya bebb.
+Semoga cintaku ini makin sayang sama aku lagi, makin ditingkatin lagi inisiatifnya dan selalu sayang aku selamanya ya bebb.
+Ini ada bunga kesukaanmu nichh...
 I lopyu bebbb..🌸
-`;
+        `;
 
-let i = 0;
+        let i = 0;
 
-function typingEffect(){
+        let typingStarted = false;
 
-    if(i < text.length){
 
-        document.getElementById("typingText")
-        .innerHTML += text.charAt(i);
+        function typingEffect() {
 
-        i++;
+            if (i < text.length) {
 
-        setTimeout(
-            typingEffect,
-            Math.random() * 120 + 60
-        );
-    }
-}
+                document.getElementById("typingText")
+                    .textContent += text.charAt(i);
 
-setTimeout(typingEffect,1500);
+                i++;
 
-</script>
+                setTimeout(
+                    typingEffect,
+                    Math.random() * 70 + 40
+                );
+
+            }
+
+        }
+
+
+        /* ========================= */
+        /* BUTTON ACTION */
+        /* ========================= */
+
+        loveBtn.addEventListener("click", async () => {
+
+            if (typingStarted) return;
+
+            typingStarted = true;
+
+            /* PLAY MUSIC */
+
+            music.currentTime = 45;
+
+            try {
+
+                await music.play();
+
+            } catch (error) {
+
+                console.log("Musik tidak dapat diputar:", error);
+
+            }
+
+
+            /* HIDE INTRO */
+
+            intro.classList.add("hide");
+
+
+            /* SHOW SCENE */
+
+            setTimeout(() => {
+
+                intro.style.display = "none";
+
+                scene.classList.add("show");
+
+                typingEffect();
+
+            }, 900);
+
+        });
+
+    </script>
 
 </body>
 </html>
